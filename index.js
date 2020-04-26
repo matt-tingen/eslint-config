@@ -2,6 +2,9 @@ const { rules: baseES6Rules } = require('eslint-config-airbnb-base/rules/es6');
 const {
   rules: baseStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
+const {
+  rules: baseReactA11yRules,
+} = require('eslint-config-airbnb/rules/react-a11y');
 
 const modifyRule = (rule, modify) => modify(rule);
 
@@ -38,6 +41,11 @@ const airbnbOverrides = {
   ...modifyRules(baseES6Rules, {
     'object-shorthand'([level, when, config]) {
       return [level, when, { ...config, avoidQuotes: false }];
+    },
+  }),
+  ...modifyRules(baseReactA11yRules, {
+    'jsx-a11y/label-has-associated-control'([level, config]) {
+      return [level, { ...config, assert: 'either' }];
     },
   }),
 };
