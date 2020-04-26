@@ -44,6 +44,15 @@ const airbnbOverrides = {
 
 const additions = {
   '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
+  'padding-line-between-statements': [
+    'error',
+    { blankLine: 'always', prev: 'const', next: 'expression' },
+    { blankLine: 'always', prev: 'let', next: 'expression' },
+    { blankLine: 'always', prev: 'var', next: 'expression' },
+    { blankLine: 'always', prev: 'multiline-block-like', next: '*' },
+    { blankLine: 'always', prev: '*', next: 'multiline-block-like' },
+    { blankLine: 'always', prev: '*', next: 'return' },
+  ],
 };
 
 const disableBuggedRules = {
