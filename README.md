@@ -1,5 +1,5 @@
 ```sh
-yarn add eslint @matt-tingen/eslint-config
+yarn add -D eslint @matt-tingen/eslint-config
 ```
 
 `.eslintrc`
