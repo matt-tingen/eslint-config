@@ -32,7 +32,9 @@ const airbnbOverrides = {
   'no-shadow': 'off',
   'no-void': 'off',
   'consistent-return': 'off',
+  'react/jsx-props-no-spreading': 'off',
   'no-restricted-globals': ['error', 'event', 'name', 'isFinite', 'isNaN'],
+
   ...modifyRules(baseStyleRules, {
     'lines-between-class-members'([level, when, config]) {
       return [level, when, { ...config, exceptAfterSingleLine: true }];
