@@ -102,4 +102,12 @@ module.exports = {
     ...disableBuggedRules,
     ...disableTypeAwareRules,
   },
+  overrides: [
+    {
+      files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
+  ],
 };
