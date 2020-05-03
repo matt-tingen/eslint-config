@@ -33,6 +33,7 @@ const airbnbOverrides = {
   'no-void': 'off',
   'consistent-return': 'off',
   'react/jsx-props-no-spreading': 'off',
+  'react/prop-types': 'off',
   'no-restricted-globals': ['error', 'event', 'name', 'isFinite', 'isNaN'],
 
   ...modifyRules(baseStyleRules, {
