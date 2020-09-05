@@ -22,6 +22,7 @@ const airbnbOverrides = {
   'consistent-return': 'off',
   'react/jsx-props-no-spreading': 'off',
   'react/prop-types': 'off',
+  'react/require-default-props': 'off',
   'no-restricted-globals': ['error', 'event', 'name', 'isFinite', 'isNaN'],
 
   ...modifyRules(baseStyleRules, {
