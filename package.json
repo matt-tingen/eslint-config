@@ -1,6 +1,6 @@
 {
   "name": "@matt-tingen/eslint-config",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "repository": "git@github.com:matt-tingen/eslint-config.git",
   "author": "Matt Tingen <matt.tingen@gmail.com>",
   "main": "index.js",
