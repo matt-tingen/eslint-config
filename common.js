@@ -50,6 +50,10 @@ const additions = {
   ],
 };
 
+const miscOverrides = {
+  'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
+};
+
 const disableBuggedRules = {
   // https://github.com/benmosher/eslint-plugin-import/issues/1453
   'import/no-cycle': 'off',
@@ -77,6 +81,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
     'prettier/react',
+    'plugin:eslint-comments/recommended',
   ],
   settings: {
     'import/internal-regex': '^[~/]',
@@ -84,6 +89,7 @@ module.exports = {
   rules: {
     ...airbnbOverrides,
     ...additions,
+    ...miscOverrides,
     ...disableBuggedRules,
     ...disableTypeAwareRules,
   },
