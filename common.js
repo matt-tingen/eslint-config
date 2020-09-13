@@ -50,6 +50,16 @@ const additions = {
     { blankLine: 'always', prev: '*', next: 'multiline-block-like' },
     { blankLine: 'always', prev: '*', next: 'return' },
   ],
+  'sort-imports': [
+    'error',
+    {
+      ignoreCase: true,
+      // `import/order` controls declaration sorting and group spacing; this
+      // rule is only used to sort members.
+      ignoreDeclarationSort: true,
+      allowSeparatedGroups: true,
+    },
+  ],
 };
 
 const miscOverrides = {
