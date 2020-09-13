@@ -16,6 +16,8 @@ const airbnbOverrides = {
   '@typescript-eslint/explicit-function-return-type': 'off',
   '@typescript-eslint/no-non-null-assertion': 'off',
   '@typescript-eslint/no-use-before-define': 'off',
+  '@typescript-eslint/explicit-module-boundary-types': 'off',
+  '@typescript-eslint/lines-between-class-members': 'off',
   'no-plusplus': 'off',
   'no-shadow': 'off',
   'no-void': 'off',
@@ -65,6 +67,7 @@ const disableTypeAwareRules = {
   '@typescript-eslint/no-implied-eval': 'off',
   '@typescript-eslint/no-throw-literal': 'off',
   '@typescript-eslint/no-floating-promises': 'off',
+  '@typescript-eslint/dot-notation': 'off',
 };
 
 /** @type {import('eslint').Linter.Config} */
@@ -76,7 +79,6 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
