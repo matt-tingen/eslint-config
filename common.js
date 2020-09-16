@@ -26,6 +26,8 @@ const airbnbOverrides = {
   'react/prop-types': 'off',
   'react/require-default-props': 'off',
   'no-restricted-globals': ['error', 'event', 'name', 'isFinite', 'isNaN'],
+  // Redundent to @typescript-eslint/naming-convention
+  'no-underscore-dangle': 'off',
 
   ...modifyRules(baseStyleRules, {
     'lines-between-class-members'([level, when, config]) {
