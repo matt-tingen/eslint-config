@@ -62,6 +62,7 @@ const additions = {
       allowSeparatedGroups: true,
     },
   ],
+  'no-implicit-coercion': ['error', { boolean: true }],
 };
 
 const miscOverrides = {
