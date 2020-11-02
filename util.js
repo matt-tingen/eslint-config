@@ -1,3 +1,11 @@
+const testFiles = [
+  '*.test.js',
+  '*.test.jsx',
+  '*.test.ts',
+  '*.test.tsx',
+  '__mock__/**',
+];
+
 const modifyRule = (rule, modify) => modify(rule);
 
 const modifyRules = (ruleSet, modifiers) =>
@@ -9,5 +17,6 @@ const modifyRules = (ruleSet, modifiers) =>
   );
 
 module.exports = {
+  testFiles,
   modifyRules,
 };

@@ -2,7 +2,7 @@ const { rules: baseES6Rules } = require('eslint-config-airbnb-base/rules/es6');
 const {
   rules: baseStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
-const { modifyRules } = require('./util');
+const { modifyRules, testFiles } = require('./util');
 
 const airbnbOverrides = {
   'import/order': [
@@ -97,7 +97,6 @@ module.exports = {
     'prettier/@typescript-eslint',
     'prettier/react',
     'plugin:eslint-comments/recommended',
-    'plugin:jest/recommended',
   ],
   settings: {
     'import/internal-regex': '^[~/]',
@@ -111,13 +110,8 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        '*.test.js',
-        '*.test.jsx',
-        '*.test.ts',
-        '*.test.tsx',
-        '__mock__/**',
-      ],
+      files: testFiles,
+      extends: ['plugin:jest/recommended'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
       },
