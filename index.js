@@ -17,6 +17,8 @@ module.exports = {
   extends: [
     'airbnb-typescript',
     'airbnb/hooks',
+    'plugin:jest-dom/recommended',
+    'plugin:testing-library/react',
     path.resolve(__dirname, './common'),
   ],
   rules: {

@@ -97,6 +97,7 @@ module.exports = {
     'prettier/@typescript-eslint',
     'prettier/react',
     'plugin:eslint-comments/recommended',
+    'plugin:jest/recommended',
   ],
   settings: {
     'import/internal-regex': '^[~/]',
@@ -110,7 +111,13 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx'],
+      files: [
+        '*.test.js',
+        '*.test.jsx',
+        '*.test.ts',
+        '*.test.tsx',
+        '__mock__/**',
+      ],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
       },
