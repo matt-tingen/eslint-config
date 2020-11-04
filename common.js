@@ -5,6 +5,7 @@ const {
 const { modifyRules, testFiles } = require('./util');
 
 const airbnbOverrides = {
+  'import/named': 'off',
   'import/order': [
     'error',
     {
