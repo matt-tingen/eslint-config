@@ -1,5 +1,5 @@
 {
-  "extends": "./index",
+  "extends": "./base",
   "rules": {
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/no-var-requires": "off",
