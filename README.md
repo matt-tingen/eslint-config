@@ -1,3 +1,11 @@
+`package.json`
+
+```json
+"resolutions": {
+  "@typescript-eslint/parser": "4.6.1"
+}
+```
+
 ```sh
 yarn add -D eslint @matt-tingen/eslint-config
 ```
