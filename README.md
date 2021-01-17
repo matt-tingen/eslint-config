@@ -2,7 +2,7 @@
 
 ```json
 "resolutions": {
-  "@typescript-eslint/parser": "4.6.1"
+  "eslint-config-airbnb-typescript/@typescript-eslint/parser": "^4.6.1"
 }
 ```
 
