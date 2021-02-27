@@ -25,10 +25,13 @@ const airbnbOverrides = {
   '@typescript-eslint/no-shadow': 'off',
   'no-plusplus': 'off',
   'no-void': 'off',
+  'func-names': 'off',
   'consistent-return': 'off',
   'react/jsx-props-no-spreading': 'off',
   'react/prop-types': 'off',
   'react/require-default-props': 'off',
+  // Handled by TypeScript; can trigger false-positives
+  'array-callback-return': 'off',
   'no-restricted-globals': ['error', 'event', 'name', 'isFinite', 'isNaN'],
   // Redundent to @typescript-eslint/naming-convention
   'no-underscore-dangle': 'off',
@@ -105,6 +108,19 @@ const disableTypeAwareRules = {
   '@typescript-eslint/no-throw-literal': 'off',
   '@typescript-eslint/no-floating-promises': 'off',
   '@typescript-eslint/dot-notation': 'off',
+  '@typescript-eslint/return-await': 'off',
+  '@typescript-eslint/await-thenable': 'off',
+  '@typescript-eslint/no-for-in-array': 'off',
+  '@typescript-eslint/no-misused-promises': 'off',
+  '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+  '@typescript-eslint/no-unsafe-assignment': 'off',
+  '@typescript-eslint/no-unsafe-call': 'off',
+  '@typescript-eslint/no-unsafe-member-access': 'off',
+  '@typescript-eslint/no-unsafe-return': 'off',
+  '@typescript-eslint/prefer-regexp-exec': 'off',
+  '@typescript-eslint/restrict-plus-operands': 'off',
+  '@typescript-eslint/restrict-template-expressions': 'off',
+  '@typescript-eslint/unbound-method': 'off',
 };
 
 /** @type {import('eslint').Linter.Config} */
