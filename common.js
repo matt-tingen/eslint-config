@@ -1,8 +1,5 @@
 const { rules: baseES6Rules } = require('eslint-config-airbnb-base/rules/es6');
 const {
-  rules: baseImportRules,
-} = require('eslint-config-airbnb-base/rules/imports');
-const {
   rules: baseStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
 const { modifyRules, testFiles } = require('./util');
@@ -44,26 +41,6 @@ const airbnbOverrides = {
   ...modifyRules(baseES6Rules, {
     'object-shorthand'([level, when, config]) {
       return [level, when, { ...config, avoidQuotes: false }];
-    },
-  }),
-  // Pending https://github.com/iamturns/eslint-config-airbnb-typescript/pull/167
-  ...modifyRules(baseImportRules, {
-    'import/no-extraneous-dependencies'([level, config]) {
-      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test#Using_test_on_a_regex_with_the_global_flag
-      const jsExt = () => /\bjs(x?)\b/g;
-
-      return [
-        level,
-        {
-          ...config,
-          devDependencies: [
-            ...config.devDependencies,
-            ...config.devDependencies
-              .filter((glob) => jsExt().test(glob))
-              .map((glob) => glob.replace(jsExt(), 'ts$1')),
-          ],
-        },
-      ];
     },
   }),
 };

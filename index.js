@@ -28,5 +28,15 @@ module.exports = {
       files: testFiles,
       extends: ['plugin:jest-dom/recommended', 'plugin:testing-library/react'],
     },
+    {
+      files: ['*.jsx', '*.tsx'],
+      rules: {
+        // Block-style is desired for components even if they could be changed
+        // to inline-style because it simplifies adding hooks which is fairly
+        // common. This rule does support this use case for _object_ return
+        // values, but not for jsx return values.
+        'arrow-body-style': 'off',
+      },
+    },
   ],
 };
