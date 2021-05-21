@@ -134,8 +134,6 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
     'plugin:eslint-comments/recommended',
   ],
   settings: {
