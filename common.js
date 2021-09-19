@@ -20,6 +20,9 @@ const airbnbOverrides = {
   '@typescript-eslint/explicit-module-boundary-types': 'off',
   '@typescript-eslint/lines-between-class-members': 'off',
   '@typescript-eslint/no-shadow': 'off',
+  // Doesn't work well with e.g. zod and is handled by TS anyway
+  // https://github.com/typescript-eslint/typescript-eslint/issues/2585#issuecomment-696269611
+  '@typescript-eslint/no-redeclare': 'off',
   'no-plusplus': 'off',
   'no-void': 'off',
   'func-names': 'off',
