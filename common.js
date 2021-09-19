@@ -30,6 +30,7 @@ const airbnbOverrides = {
   'react/jsx-props-no-spreading': 'off',
   'react/prop-types': 'off',
   'react/require-default-props': 'off',
+  'import/prefer-default-export': 'off',
   // Handled by TypeScript; can trigger false-positives
   'array-callback-return': 'off',
   'no-restricted-globals': ['error', 'event', 'name', 'isFinite', 'isNaN'],
@@ -70,6 +71,7 @@ const additions = {
     },
   ],
   'no-implicit-coercion': ['error', { boolean: true }],
+  'import/no-default-export': ['error'],
 };
 
 const miscOverrides = {
