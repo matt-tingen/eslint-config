@@ -136,5 +136,11 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
       },
     },
+    {
+      files: '*.d.ts',
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
   ],
 };
