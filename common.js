@@ -2,7 +2,7 @@ const { rules: baseES6Rules } = require('eslint-config-airbnb-base/rules/es6');
 const {
   rules: baseStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
-const { modifyRules, testFiles } = require('./util');
+const { modifyRules, testFiles, configFiles } = require('./util');
 
 const airbnbOverrides = {
   'import/named': 'off',
@@ -134,6 +134,12 @@ module.exports = {
       extends: ['plugin:jest/recommended'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
+    {
+      files: configFiles,
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
     {
