@@ -41,6 +41,16 @@ const airbnbOverrides = {
     'lines-between-class-members'([level, when, config]) {
       return [level, when, { ...config, exceptAfterSingleLine: true }];
     },
+    'no-restricted-syntax'([level, ...featureConfigs]) {
+      return [
+        level,
+        ...featureConfigs.filter(
+          // `for...of` is prohibited because it incurs the cost of
+          // `regenerator-runtime`, but only for older targets.
+          (config) => config.selector !== 'ForOfStatement',
+        ),
+      ];
+    },
   }),
   ...modifyRules(baseES6Rules, {
     'object-shorthand'([level, when, config]) {
