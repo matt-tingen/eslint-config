@@ -1,11 +1,3 @@
-`package.json`
-
-```json
-"resolutions": {
-  "eslint-config-airbnb-typescript/@typescript-eslint/parser": "^4.24.0"
-}
-```
-
 ```sh
 yarn add -D eslint @matt-tingen/eslint-config
 ```
