@@ -1,5 +1,8 @@
 const { rules: baseES6Rules } = require('eslint-config-airbnb-base/rules/es6');
 const {
+  rules: baseImportRules,
+} = require('eslint-config-airbnb-base/rules/imports');
+const {
   rules: baseStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
 const { modifyRules, testFiles, configFiles } = require('./util');
@@ -55,6 +58,20 @@ const airbnbOverrides = {
   ...modifyRules(baseES6Rules, {
     'object-shorthand'([level, when, config]) {
       return [level, when, { ...config, avoidQuotes: false }];
+    },
+  }),
+  ...modifyRules(baseImportRules, {
+    'import/no-extraneous-dependencies'([level, config]) {
+      return [
+        level,
+        {
+          ...config,
+          devDependencies: [
+            ...config.devDependencies,
+            ...configFiles.map((glob) => `**/${glob}`),
+          ],
+        },
+      ];
     },
   }),
 };
