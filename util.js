@@ -6,7 +6,7 @@ const testFiles = [
   '__mock__/**',
 ];
 
-const configFiles = ['*.config.js', '*.config.ts', '.*rc.js', '.*rc.ts'];
+const configFiles = ['*.config.*', '.*rc.*'];
 
 const modifyRule = (rule, modify) => modify(rule);
 
