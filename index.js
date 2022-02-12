@@ -39,6 +39,13 @@ module.exports = {
         // common. This rule does support this use case for _object_ return
         // values, but not for jsx return values.
         'arrow-body-style': 'off',
+        'react/jsx-key': [
+          'error',
+          {
+            checkFragmentShorthand: true,
+            checkKeyMustBeforeSpread: true,
+          },
+        ],
       },
     },
   ],
