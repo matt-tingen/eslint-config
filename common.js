@@ -1,3 +1,6 @@
+const {
+  rules: baseBestPracticesRules,
+} = require('eslint-config-airbnb-base/rules/best-practices');
 const { rules: baseES6Rules } = require('eslint-config-airbnb-base/rules/es6');
 const {
   rules: baseImportRules,
@@ -69,6 +72,20 @@ const airbnbOverrides = {
           devDependencies: [
             ...config.devDependencies,
             ...configFiles.map((glob) => `**/${glob}`),
+          ],
+        },
+      ];
+    },
+  }),
+  ...modifyRules(baseBestPracticesRules, {
+    'no-param-reassign'([level, config]) {
+      return [
+        level,
+        {
+          ...config,
+          ignorePropertyModificationsFor: [
+            ...config.ignorePropertyModificationsFor,
+            'draft', // for immer
           ],
         },
       ];
