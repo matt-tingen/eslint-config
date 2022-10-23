@@ -5,6 +5,13 @@ const testFiles = [
   '*.test.tsx',
   '__mock__/**',
 ];
+const storyFiles = [
+  '*.stories.js',
+  '*.stories.jsx',
+  '*.stories.ts',
+  '*.stories.tsx',
+  'stories/**/*',
+];
 
 const configFiles = ['*.config.*', '.*rc.*'];
 
@@ -20,6 +27,7 @@ const modifyRules = (ruleSet, modifiers) =>
 
 module.exports = {
   testFiles,
+  storyFiles,
   configFiles,
   modifyRules,
 };

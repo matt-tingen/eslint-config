@@ -8,7 +8,7 @@ const {
 const {
   rules: baseStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
-const { modifyRules, testFiles, configFiles } = require('./util');
+const { modifyRules, testFiles, configFiles, storyFiles } = require('./util');
 
 const airbnbOverrides = {
   'import/named': 'off',
@@ -72,6 +72,8 @@ const airbnbOverrides = {
           devDependencies: [
             ...config.devDependencies,
             ...configFiles.map((glob) => `**/${glob}`),
+            ...testFiles.map((glob) => `**/${glob}`),
+            ...storyFiles.map((glob) => `**/${glob}`),
           ],
         },
       ];
@@ -178,6 +180,13 @@ module.exports = {
       extends: ['plugin:jest/recommended'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
+    {
+      files: storyFiles,
+      extends: ['plugin:storybook/recommended'],
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
     {
