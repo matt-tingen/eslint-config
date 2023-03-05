@@ -165,6 +165,7 @@ module.exports = {
     'plugin:eslint-comments/recommended',
   ],
   settings: {
+    'import/resolver': 'typescript',
     'import/internal-regex': '^[~/]',
   },
   rules: {
