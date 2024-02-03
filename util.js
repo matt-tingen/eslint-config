@@ -1,15 +1,9 @@
 const testFiles = [
-  '*.test.js',
-  '*.test.jsx',
-  '*.test.ts',
-  '*.test.tsx',
+  '*.test.*',
   '__mock__/**',
 ];
 const storyFiles = [
-  '*.stories.js',
-  '*.stories.jsx',
-  '*.stories.ts',
-  '*.stories.tsx',
+  '*.stories.*',
   'stories/**/*',
 ];
 
