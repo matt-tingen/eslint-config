@@ -1,5 +1,6 @@
 const testFiles = [
   '*.test.*',
+  'tests/**/*',
   '__mock__/**',
 ];
 const storyFiles = [
