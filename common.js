@@ -129,14 +129,6 @@ const disableBuggedRules = {
   'import/no-cycle': 'off',
 };
 
-// These rules do not support eslint v9.
-const disableLegacyRules = {
-  "import/no-amd": 'off',
-  "import/no-mutable-exports": 'off',
-  "import/newline-after-import": 'off',
-  "import/no-named-as-default": 'off',
-}
-
 // Enabling type-aware rules incurs a performance hit.
 // TODO: avoid disabling these is a separate config.
 const disableTypeAwareRules = {
@@ -182,7 +174,6 @@ module.exports = {
     ...miscOverrides,
     ...disableBuggedRules,
     ...disableTypeAwareRules,
-    ...disableLegacyRules,
   },
   overrides: [
     {
