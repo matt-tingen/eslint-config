@@ -96,6 +96,7 @@ const airbnbOverrides = {
 };
 
 const additions = {
+  'quotes': ['error', 'single', { 'avoidEscape': true }],
   '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }],
   'padding-line-between-statements': [
     'error',
