@@ -158,12 +158,13 @@ module.exports = {
   ignorePatterns: ['node_modules/', 'dist/', '.*cache/'],
   reportUnusedDisableDirectives: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import-type-only'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'plugin:eslint-comments/recommended',
+    'plugin:import-type-only/recommended',
   ],
   settings: {
     'import/resolver': 'typescript',
