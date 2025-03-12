@@ -1,20 +1,27 @@
 ```sh
-yarn add -D eslint @matt-tingen/eslint-config
+pnpm add -D eslint@^9 @matt-tingen/eslint-config
 ```
 
-`.eslintrc.js`
+`eslint.config.mjs`
 
 ```js
-require('@matt-tingen/eslint-config/patch');
+import mt from '@matt-tingen/eslint-config';
 
-module.exports = {
-  root: true,
-  extends: [
-    '@matt-tingen/eslint-config',
-    'plugin:react/jsx-runtime', // If using JSX transform from react 17
-  ],
-};
+export default [
+  {
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+        projectService: true,
+        // OR:
+        // projectService: {
+        //   allowDefaultProject: ['client/*.config.mts'],
+        //   defaultProject: 'tsconfig-base.json',
+        // },
+      },
+    },
+  },
+  mt.configs.gitignore(import.meta.dirname),
+  ...mt.configs.recommended,
+];
 ```
-
-The `@matt-tingen/eslint-config/base` is also available for projects not using
-react.
