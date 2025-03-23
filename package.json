@@ -20,7 +20,7 @@
   "scripts": {
     "build": "tsup src/index.ts --clean --dts --format esm,cjs",
     "ts": "tsc --noEmit",
-    "lint": "eslint --ext .ts,.tsx src",
+    "lint": "eslint",
     "format": "prettier --write src",
     "preversion": "pnpm ts && pnpm lint && pnpm build",
     "postversion": "pnpm publish && git push && git push --tags"
