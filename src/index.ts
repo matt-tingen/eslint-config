@@ -9,6 +9,7 @@ import { cleanup } from './baseConfigs/cleanup';
 import { comments } from './baseConfigs/comments';
 import { dependencies } from './baseConfigs/dependencies';
 import { disables } from './baseConfigs/disables';
+import { disableSlow } from './baseConfigs/disableSlow';
 import { gitignore } from './baseConfigs/gitignore';
 import { noDefaultExport } from './baseConfigs/noDefaultExport';
 import { obsoletedByTs } from './baseConfigs/obsoletedByTs';
@@ -38,6 +39,7 @@ const baseConfigs = {
   safety,
   dependencies,
   prettier,
+  disableSlow,
 } as const;
 
 interface Options {
