@@ -1,6 +1,21 @@
 import tseslint, { InfiniteDepthConfigWithExtends } from 'typescript-eslint';
 
-export const typescript: InfiniteDepthConfigWithExtends[] = [
+export const typescript = (root: string): InfiniteDepthConfigWithExtends[] => [
+  {
+    name: 'tseslint-options',
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: root,
+        projectService: true,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: true,
+      },
+    },
+  },
   ...tseslint.configs.recommendedTypeChecked,
   {
     name: 'tseslint-overrides',

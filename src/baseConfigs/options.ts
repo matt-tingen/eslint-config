@@ -5,13 +5,4 @@ export const options: Config = {
   linterOptions: {
     reportUnusedDisableDirectives: 'error',
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-    'import/resolver': {
-      typescript: true,
-      node: true,
-    },
-  },
 };

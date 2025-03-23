@@ -3,6 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { isTruthy } from './isTruthy';
 
+const isAllowed = (file: string) => {
+  // Hacky workaround for
+  // https://github.com/antfu/eslint-config-flat-gitignore/issues/18
+  return !file.includes('.gitignore_global');
+};
+
 const getGlobalGitignore = () => {
   try {
     const globalGitignore = execSync('git config --get core.excludesfile')
@@ -37,4 +43,5 @@ const getInfoExclude = (root: string) => {
 export const findGitignores = (root: string) =>
   [getGlobalGitignore(), ...getRepoGitignores(root), getInfoExclude(root)]
     .filter(isTruthy)
+    .filter(isAllowed)
     .map((absolutePath) => path.relative(root, absolutePath));

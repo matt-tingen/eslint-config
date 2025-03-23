@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import { typedEntries } from '@matt-tingen/util';
 import prettier from 'eslint-config-prettier/flat';
 import { flatConfigs as import_ } from 'eslint-plugin-import';
 import importTypeOnly from 'eslint-plugin-import-type-only';
@@ -20,6 +21,7 @@ import { typescript } from './baseConfigs/typescript';
 
 const baseConfigs = {
   options,
+  gitignore,
   js: js.configs.recommended,
   typescript,
   import: import_.recommended,
@@ -38,13 +40,24 @@ const baseConfigs = {
   prettier,
 } as const;
 
-const recommended = tseslint.config(Object.values(baseConfigs).flat());
+interface Options {
+  root?: string;
+}
+
+const customize = ({ root = process.cwd() }: Options) => {
+  const combined = typedEntries(baseConfigs).map(([, config]) =>
+    typeof config === 'function' ? config(root) : config,
+  );
+
+  return tseslint.config(combined);
+};
+
+const recommended = customize({});
 
 // eslint-disable-next-line import/no-default-export
 export default {
   configs: {
-    ...baseConfigs,
-    gitignore,
     recommended,
+    customize,
   },
 };

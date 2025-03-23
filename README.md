@@ -7,21 +7,24 @@ pnpm add -D eslint@^9 @matt-tingen/eslint-config
 ```js
 import mt from '@matt-tingen/eslint-config';
 
+export default mt.configs.recommended;
+```
+
+Or if additional configuration is needed:
+
+```js
+import mt from '@matt-tingen/eslint-config';
+
 export default [
+  ...mt.configs.customize({ root: import.meta.dir }),
   {
     languageOptions: {
       parserOptions: {
-        tsconfigRootDir: import.meta.dirname,
-        projectService: true,
-        // OR:
-        // projectService: {
-        //   allowDefaultProject: ['client/*.config.mts'],
-        //   defaultProject: 'tsconfig-base.json',
-        // },
+        projectService: {
+          allowDefaultProject: ['client/*.config.mts'],
+          defaultProject: 'tsconfig-base.json',
       },
     },
   },
-  mt.configs.gitignore(import.meta.dirname),
-  ...mt.configs.recommended,
 ];
 ```
