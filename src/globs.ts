@@ -1,6 +1,6 @@
 export const developmentFiles = ['**/dev/**/*', '**/*.dev.*'];
 export const testFiles = [
-  '*.test.*',
+  '**/*.test.*',
   '**/tests/**/*',
   '**/__mock__/**/*',
   '**/jest.setup.*',
