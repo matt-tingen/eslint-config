@@ -1,13 +1,8 @@
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { isTruthy } from './isTruthy';
-
-const isAllowed = (file: string) => {
-  // Hacky workaround for
-  // https://github.com/antfu/eslint-config-flat-gitignore/issues/18
-  return !file.includes('.gitignore_global');
-};
+import { isTruthy } from '@matt-tingen/util';
+import { isAllowed } from './gitignoreWorkaround';
 
 const getGlobalGitignore = () => {
   try {
