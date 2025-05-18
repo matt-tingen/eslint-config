@@ -17,5 +17,7 @@ export const disables: Config = {
     'unicorn/prefer-query-selector': 'off',
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/switch-case-braces': 'off',
+    // Good in theory, but doesn't work well with typescript.
+    'unicorn/no-magic-array-flat-depth': 'off',
   },
 };
