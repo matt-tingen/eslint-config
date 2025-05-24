@@ -41,7 +41,7 @@ export const stylistic: Config[] = [
         },
       ],
 
-      'import/order': [
+      'import-x/order': [
         'error',
         {
           'newlines-between': 'never',
@@ -64,13 +64,13 @@ export const stylistic: Config[] = [
         'error',
         {
           ignoreCase: true,
-          // `import/order` controls declaration sorting and group spacing; this
+          // `import-x/order` controls declaration sorting and group spacing; this
           // rule is only used to sort members.
           ignoreDeclarationSort: true,
           allowSeparatedGroups: true,
         },
       ],
-      'import/newline-after-import': 'error',
+      'import-x/newline-after-import': 'error',
     },
   },
 ];

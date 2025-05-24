@@ -5,6 +5,6 @@ export const noDefaultExport: Config = {
   name: 'no-default-export',
   ignores: [...storyFiles, ...configFiles, '**/*.d.ts'],
   rules: {
-    'import/no-default-export': ['error'],
+    'import-x/no-default-export': ['error'],
   },
 };

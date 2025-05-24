@@ -1,8 +1,8 @@
 import js from '@eslint/js';
 import { typedEntries } from '@matt-tingen/util';
 import prettier from 'eslint-config-prettier/flat';
-import { flatConfigs as import_ } from 'eslint-plugin-import';
 import importTypeOnly from 'eslint-plugin-import-type-only';
+import { flatConfigs as importX } from 'eslint-plugin-import-x';
 import unicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
 import { cleanup } from './baseConfigs/cleanup';
@@ -24,8 +24,8 @@ const baseConfigs = {
   options,
   gitignore,
   js: js.configs.recommended,
+  import: importX.recommended,
   typescript,
-  import: import_.recommended,
   unicorn: unicorn.configs.recommended,
   react,
   comments,
@@ -56,7 +56,7 @@ const customize = ({ root = process.cwd() }: Options) => {
 
 const recommended = customize({});
 
-// eslint-disable-next-line import/no-default-export
+// eslint-disable-next-line import-x/no-default-export
 export default {
   configs: {
     recommended,

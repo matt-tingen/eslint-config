@@ -11,7 +11,7 @@ const devDependencies = [
 export const dependencies: Config = {
   name: 'dependencies',
   rules: {
-    'import/no-extraneous-dependencies': [
+    'import-x/no-extraneous-dependencies': [
       'error',
       { devDependencies, optionalDependencies: false },
     ],

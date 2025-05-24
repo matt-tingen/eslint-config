@@ -1,3 +1,4 @@
+import { flatConfigs as importX } from 'eslint-plugin-import-x';
 import tseslint, { InfiniteDepthConfigWithExtends } from 'typescript-eslint';
 
 export const typescript = (root: string): InfiniteDepthConfigWithExtends[] => [
@@ -7,12 +8,6 @@ export const typescript = (root: string): InfiniteDepthConfigWithExtends[] => [
       parserOptions: {
         tsconfigRootDir: root,
         projectService: true,
-      },
-    },
-    settings: {
-      'import/resolver': {
-        typescript: true,
-        node: true,
       },
     },
   },
@@ -31,4 +26,5 @@ export const typescript = (root: string): InfiniteDepthConfigWithExtends[] => [
     files: ['**/*.js', '**/*.mjs'],
     extends: [tseslint.configs.disableTypeChecked],
   },
+  importX.typescript,
 ];
