@@ -19,6 +19,7 @@ import { react } from './baseConfigs/react';
 import { safety } from './baseConfigs/safety';
 import { stylistic } from './baseConfigs/stylistic';
 import { typescript } from './baseConfigs/typescript';
+import { plugins } from './plugins';
 
 const baseConfigs = {
   options,
@@ -62,4 +63,5 @@ export default {
     recommended,
     customize,
   },
+  plugins,
 };
