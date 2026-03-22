@@ -13,7 +13,7 @@ export const react: Config[] = [
   },
   react_.configs.flat.recommended,
   react_.configs.flat['jsx-runtime'],
-  hooks.configs['recommended-latest'],
+  hooks.configs.flat['recommended-latest'],
   {
     rules: {
       'react/jsx-key': [

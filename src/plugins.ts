@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import eslintCommentsConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import stylistic from '@stylistic/eslint-plugin';
 import importTypeOnly from 'eslint-plugin-import-type-only';
-import importX from 'eslint-plugin-import-x';
+import { importX } from 'eslint-plugin-import-x';
 import jest from 'eslint-plugin-jest';
 import jestDom from 'eslint-plugin-jest-dom';
 import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';

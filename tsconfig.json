@@ -4,6 +4,7 @@
     "moduleResolution": "bundler",
     "moduleDetection": "force",
     "noEmit": true,
+    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
     "target": "ESNext",
