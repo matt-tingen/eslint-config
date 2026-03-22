@@ -2,16 +2,17 @@ import { flatConfigs as importX } from 'eslint-plugin-import-x';
 import tseslint, { InfiniteDepthConfigWithExtends } from 'typescript-eslint';
 
 export const typescript = (root: string): InfiniteDepthConfigWithExtends[] => [
+  ...tseslint.configs.recommendedTypeChecked,
   {
     name: 'tseslint-options',
     languageOptions: {
       parserOptions: {
         tsconfigRootDir: root,
         projectService: true,
+        project: false,
       },
     },
   },
-  ...tseslint.configs.recommendedTypeChecked,
   {
     name: 'tseslint-overrides',
     rules: {
